@@ -4,6 +4,7 @@ const moment = require('moment');
 
 const Stock = require('../models/Stock');
 
+// 신한금융투자 API 서비스
 class SHInvest {
   constructor() {
     this.restClient = axios.create({
@@ -16,12 +17,15 @@ class SHInvest {
   async getStockCurrentPrice(stockCode) {
     const stock = await Stock.getStockByCode(stockCode);
     if (stock.is_domestic) {
+      // 국내
       return this._getDomesticStockCurrentPrice(stock);
     } else {
+      // 해외
       return this._getForeignStockCurrentPrice(stock);
     }
   }
 
+  // 국내주식 현재가
   _getDomesticStockCurrentPrice(stock) {
     console.log('[신한금융투자 API] 국내주식 현재가 주가추이');
     
@@ -38,6 +42,7 @@ class SHInvest {
     });
   }
 
+  // 해외주식 현재가
   _getForeignStockCurrentPrice(stock) {
     console.log('[신한금융투자 API] 해외주식 현재가 주가추이');
     
