@@ -5,5 +5,10 @@
     "user": "root",
     "password": "secret",
     "database": "stock-reward"
+  },
+  "api": {
+    "bank": "http://10.3.17.61:8080",
+    "card": "http://10.3.17.61:8081",
+    "invest": "http://10.3.17.61:8082"
   }
 }

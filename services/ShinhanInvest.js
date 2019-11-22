@@ -1,18 +1,19 @@
 const axios = require('axios');
+const config = require('config');
 const moment = require('moment');
 
-const StockService = require('../services/Stock');
+const Stock = require('../models/Stock');
 
 class SHInvest {
   constructor() {
     this.restClient = axios.create({
-      baseURL: 'http://10.3.17.61:8082',
+      baseURL: config.get('api.invest'),
       timeout: 10000,
     });
   }
 
   async getStockCurrentPrice(stockCode) {
-    const stock = await StockService.getStockByCode(stockCode);
+    const stock = await Stock.getStockByCode(stockCode);
     if (stock.is_domestic) {
       return this._getDomesticStockCurrentPrice(stock);
     } else {
