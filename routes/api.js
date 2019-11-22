@@ -1,21 +1,31 @@
 const express = require('express');
 const router = express.Router();
 
-const UserService = require('../services/User');
 const SHInvestService = require('../services/ShinhanInvest');
 
-router.get('/api/user/:id', (req, res) => {
-  const userId = req.params.id;
-  UserService.getUser(userId).then(user => {
-    res.status(200).send(user);
-  });
-});
+// router.get('/api/user/:id', (req, res) => {
+//   const userId = req.params.id;
+//   UserService.getUser(userId).then(user => {
+//     res.status(200).send(user);
+//   });
+// });
 
-router.get('/api/fstock/order', (req, res) => {
-  // TODO: Test
-  SHInvestService.orderForeignStockSimple("27001234567", "71374773999190%2FENC%2FZ6tnuZ292EXO%2B2MoGTbaXQ%3D%3D%0A", "USAAAPL", "1", "10", "", "").then(resvSeq => {
+// router.get('/api/stock/:code', (req, res) => {
+//   const stockCode = req.params.code;
+//   StockService.getStockByCode(stockCode).then(stock => {
+//     res.status(200).send(stock);
+//   }).catch(err => {
+//     console.log(err);
+//     res.status(500).send(err);
+//   });
+// });
+
+// 주식 현재가
+router.get('/api/stock/:code/current-price', (req, res) => {
+  const stockCode = req.params.code;
+  SHInvestService.getStockCurrentPrice(stockCode).then(price => {
     res.status(200).send({
-      resvSeq: resvSeq
+      price: price
     });
   });
 });

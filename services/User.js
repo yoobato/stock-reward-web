@@ -13,7 +13,7 @@ class User {
         MariaDB.close(client);
         return reject(err);
       });
-    });    
+    });
   }
 }
 
