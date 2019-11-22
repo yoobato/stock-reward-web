@@ -11,20 +11,16 @@ class OSignal {
         }); 
     }
     
-    sendNotification(){
-        var firstNotification = new OneSignal.Notification({      
+    stockInsertNotification(stock, amount){
+        var stockNotification = new OneSignal.Notification({
             contents: {      
-                en: "Test notification",      
-                tr: "Test mesajı"      
+                en: stock + " 주식이 " + amount + "주 입금되었습니다."
             }      
         });  
-        // set target users      
-        firstNotification.postBody["included_segments"] = ["Active Users"];      
-            
-        // set notification parameters      
-        firstNotification.postBody["data"] = {"abc": "123", "foo": "bar"};      
-
-        return this.myClient.sendNotification(firstNotification)      
+        stockNotification.postBody["included_segments"] = ["Active Users"];      
+        //TODO: 메시지 수정 및 icon 추가
+        stockNotification.postBody["headings"] = { "en" : "주식 입금 알림" };
+        return this.myClient.sendNotification(stockNotification)      
         .then(response => {
             return Promise.resolve(response.data);
         })      

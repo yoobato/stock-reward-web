@@ -21,8 +21,8 @@ router.get('/api/fstock/order', (req, res) => {
   });
 });
 
-router.get('/api/sendNotification', (req, res) => {
-  OneSignal.sendNotification().then(response => {
+router.get('/api/stock/noti/insert', (req, res) => {
+  OneSignal.stockInsertNotification("APPLE","1.2").then(response => {
     res.status(200).send(response);
   }); 
 });
