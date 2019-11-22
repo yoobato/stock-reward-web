@@ -1,7 +1,15 @@
 const express = require('express');
 const router = express.Router();
 
+const UserService = require('../services/User');
 const SHInvestService = require('../services/ShinhanInvest');
+
+router.get('/api/user/:id', (req, res) => {
+  const userId = req.params.id;
+  UserService.getUser(userId).then(user => {
+    res.status(200).send(user);
+  });
+});
 
 router.get('/api/fstock/order', (req, res) => {
   // TODO: Test

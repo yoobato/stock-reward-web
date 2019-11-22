@@ -17,7 +17,7 @@
 * [Shinhan API](https://github.com/ShinhanOpenInnovationLab/Hackathon)
 * [NodeJS](https://nodejs.org/)
 * [Express](https://expressjs.com/)
-* [MongoDB](https://www.mongodb.com/)
+* [MariaDB](https://mariadb.org/)
 
 ## 사용 방법
 
@@ -25,5 +25,5 @@
 yarn install
 yarn start
 
-docker run --name mongo -p 27017:27017 -d mongo
+docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=secret -v [LOCAL_MARIA_DB_PATH]:/var/lib/mysql --name sr_mariadb mariadb
 ```
