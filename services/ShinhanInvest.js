@@ -12,6 +12,7 @@ class SHInvest {
     });
   }
 
+  // 주식 현재가
   async getStockCurrentPrice(stockCode) {
     const stock = await Stock.getStockByCode(stockCode);
     if (stock.is_domestic) {
@@ -54,7 +55,7 @@ class SHInvest {
       }
     }).then(response => {
       let price = response.data.dataBody.historyList[0].trdprc_1;
-      // TODO: 환율 어떻게 할건지
+      // TODO: 환율
       price *= 1200;
       return Promise.resolve(price);
     });
