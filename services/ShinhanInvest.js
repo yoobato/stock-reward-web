@@ -1,4 +1,3 @@
-const logger = require('winston-this')('SHInvest-service');
 const axios = require('axios');
 
 class SHInvest {
@@ -17,8 +16,8 @@ class SHInvest {
   // ordScdlYmd	String		주문예정일자 (취소시 필요)
   // resvSeq	String		예약순번 (취소시 필요)
   orderForeignStockSimple(acctNo, acctPwd, gicCode, sellBuyTpCode, ordQty, ordScdlYmd, resvSeq) {
-    logger.info(`Order Foreign Stock`);
-
+    console.log('[신한금융투자 API] 해외주식 간편투자 주문');
+    
     return this.restClient.post('/v1/fstock/simple/ord', {
       dataHeader: {},
       dataBody: {
