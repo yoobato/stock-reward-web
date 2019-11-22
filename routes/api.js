@@ -3,6 +3,7 @@ const router = express.Router();
 
 const UserService = require('../services/User');
 const SHInvestService = require('../services/ShinhanInvest');
+const OneSignal = require('../services/OneSignal');
 
 router.get('/api/user/:id', (req, res) => {
   const userId = req.params.id;
@@ -18,6 +19,12 @@ router.get('/api/fstock/order', (req, res) => {
       resvSeq: resvSeq
     });
   });
+});
+
+router.get('/api/sendNotification', (req, res) => {
+  OneSignal.sendNotification().then(response => {
+    res.status(200).send(response);
+  }); 
 });
 
 module.exports = router;
