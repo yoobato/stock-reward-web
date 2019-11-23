@@ -3,6 +3,14 @@ const router = express.Router();
 
 const User = require('../models/User');
 const SHInvestService = require('../services/ShinhanInvest');
+const OneSignal = require('../services/OneSignal');
+
+// TODO: 푸시 메세지 테스트
+router.get('/api/stock/noti/insert', (req, res) => {
+  OneSignal.stockInsertNotification("APPLE","1.2").then(response => {
+    res.status(200).send(response);
+  }); 
+});
 
 // 구매 가능 주식 수 조회 (n원으로 몇 주 구매 가능한지)
 router.get('/api/stock/:code/calculate', (req, res) => {
