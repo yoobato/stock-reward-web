@@ -41,9 +41,24 @@ class SHInvest {
       // 콤마(,) 제거
       price = parseFloat(price.replace(/,/g, ''));
 
-      // TODO: 임의의 현재가 주식마다 다르게 해야함
-      // FIXME: 임의의 현재가
-      price = 50340;
+      // 테스트 데이터 (임의의 현재가)
+      if (stock.id == 1) {
+        // 삼성전자
+        price = 51600;
+      } else if (stock.id == 2) {
+        // LF
+        price = 17750;
+      } else if (stock.id == 3) {
+        // 한샘
+        price = 60500;
+      } else if (stock.id == 6) {
+        // 신한지주
+        price = 44200;
+      } else {
+        price = 50000;
+      }
+      // -15% ~ +15% 사이의 random variation을 둔다. (테스트용)
+      price = Math.round(price * (1 + ((Math.random() * 30 - 15) / 100)));
 
       stock.price = price;
       return Promise.resolve(stock);
@@ -68,12 +83,21 @@ class SHInvest {
       }
     }).then(response => {
       let price = response.data.dataBody.historyList[0].trdprc_1;
-      // TODO: 환율
+      // TODO: 현재 환율
       price *= 1200;
 
-      // TODO: 임의의 현재가 주식마다 다르게 해야함
-      // FIXME: 임의의 현재가
-      price = 230134;
+      // 테스트 데이터 (임의의 현재가)
+      if (stock.id == 4) {
+        // 애플
+        price = 309096;
+      } else if (stock.id == 5) {
+        // 힐튼
+        price = 119515;
+      } else {
+        price = 100000;
+      }
+      // -15% ~ +15% 사이의 random variation을 둔다. (테스트용)
+      price = Math.round(price * (1 + ((Math.random() * 30 - 15) / 100)));
 
       stock.price = price;
       return Promise.resolve(stock);
@@ -93,7 +117,6 @@ class SHInvest {
     if (stock.balance < stockQuantity) {
       // 주식을 구매할 때는 1주를 기본 단위로 구매한다
       const buyStockQuantity = Math.ceil(stockQuantity);
-      // TODO: 주식 여유분도 구매해야할까?
 
       // 주식을 새로 구매해서 지급 (주문 -> 체결)
       let contractQuantity = 0;
