@@ -10,5 +10,9 @@
     "bank": "http://10.3.17.61:8080",
     "card": "http://10.3.17.61:8081",
     "invest": "http://10.3.17.61:8082"
+  },
+  "account": {
+    "number": "27001234567",
+    "password": "71374773999190%2FENC%2FZ6tnuZ292EXO%2B2MoGTbaXQ%3D%3D%0A"
   }
 }

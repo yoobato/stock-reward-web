@@ -33,17 +33,29 @@ const SHInvestService = require('../services/ShinhanInvest');
 // 구매 가능 주식 수 조회 (n원으로 몇 주 구매 가능한지)
 router.get('/api/stock/:code/calculate', (req, res) => {
   const stockCode = req.params.code;
-  const won = req.query.won;
+  const wonPrice = req.query.won_price;
 
-  SHInvestService.getStockCurrentPrice(stockCode).then(price => {
-    const amount = won / price;
+  SHInvestService.getStockCurrentPrice(stockCode).then(stock => {
+    const availableAmount = wonPrice / stock.price;
     res.status(200).send({
-      expectedAmount: amount.toFixed(2)
+      expectedAmount: availableAmount.toFixed(2)
     });
   });
 });
 
-// TODO: 주식 주문 (주문 + 체결)
+// TODO: POST
+// 주식 지급
+router.get('/api/store/:storeId/pay-stock', (req, res) => {
+  const storeId = req.params.storeId;
+
+  const userId = req.query.user_id;
+  const stockCode = req.query.stock_code;
+  const wonPrice = req.query.won_price;
+
+  SHInvestService.payStock(storeId, userId, stockCode, wonPrice).then(() => {
+    res.status(200).send('Success');
+  });
+});
 
 // TODO: 주식 리워드 잔고 조회
 
