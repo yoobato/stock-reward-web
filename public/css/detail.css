@@ -1,0 +1,42 @@
+header {
+	margin-top: 62px;
+	text-align: center;
+}
+
+header .logo-container {
+	text-align: center;
+	margin: 0 auto;
+}
+
+header .description {
+	color: #343a40;
+	font-size: 16px;
+	margin-top: 9px;
+}
+
+.container {
+	width: 1120px;
+	height: 720px;
+	margin: 22px auto 0px auto;
+	background-color: #fafafa;
+	border: #979797 solid 1px;
+}
+
+.left-container {
+  width: calc(340px - 1px);
+  height: calc(100% - 8px);
+  background-color: #ffffff;
+  border-right: #979797 solid 1px;
+  float: left;
+}
+
+.right-container {
+  width: 780px;
+  height: calc(100% - 8px);
+  background-color: #fafafa;
+  float: right;
+}
+
+.bottom-line {
+  clear: both;
+}
