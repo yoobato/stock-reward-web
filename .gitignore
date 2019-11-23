@@ -65,3 +65,6 @@ typings/
 
 # DB
 .mariadb
+
+# apidoc
+public/apidoc/
