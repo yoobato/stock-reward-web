@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1120px" height="8px" viewBox="0 0 1120 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>Group 8</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="5.67210478%" y1="55.3676928%" x2="101.846278%" y2="55.3676928%" id="linearGradient-1">
+            <stop stop-color="#009EE8" offset="0%"></stop>
+            <stop stop-color="#6556A8" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="5.67210478%" y1="55.3676928%" x2="101.846278%" y2="55.3676928%" id="linearGradient-2">
+            <stop stop-color="#009EE8" offset="0%"></stop>
+            <stop stop-color="#6556A8" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.800000012">
+        <g id="Desktop-HD" transform="translate(-160.000000, -864.000000)">
+            <g id="Group-8" transform="translate(160.000000, 864.000000)">
+                <rect id="Rectangle" fill="url(#linearGradient-1)" x="0" y="0" width="1120" height="8"></rect>
+                <path d="M0,0 L836,0 C838.209139,-4.05812251e-16 840,1.790861 840,4 C840,6.209139 838.209139,8 836,8 L0,8 L0,8 L0,0 Z" id="Rectangle" fill="url(#linearGradient-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

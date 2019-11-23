@@ -1,17 +1,45 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>신한몰</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <title>2019 신한 해커톤 do-while 팀</title>
+    <link rel="stylesheet" type="text/css" href="css/global.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <script type="text/javascript">
+      // 상품 상세 페이지로 이동
+      const moveToDetail = (storeId, stockId) => {
+        location.href = `/detail?store_id=${storeId}&stock_id=${stockId}`;
+      };
+    </script>
   </head>
   <body>
-    <h1>Hello World</h1>
-    <ul>
-        <% for(var i=0; i<length; i++){ %>
-            <li>
-                <%= "Yoooooooooo! " + i %>
-            </li>
+    <header>
+      <div class="logo-container"><img src="images/main_header_logo.svg" alt="" /></div>
+      <div class="description">내가 아끼는 브랜드의 상품을 구매하고 <strong>주식 리워드</strong>를 받아보세요!</div>
+    </header>
+
+    <div class="container">
+      <table>
+        <% for (var i = 0; i < items.length; i++) { %>
+          <% item = items[i]; %>
+          <% if (i % 3 == 0) { %>
+            <tr>
+          <% } %>
+
+          <td class="item" onclick="moveToDetail(<%= item.store_id %>, <%= item.stock_id %>);">
+            <div class="thumbnail"><img src="images/<%= item.thumbnail %>" alt="삼성 QLED 8K 189 cm" /></div>
+            <div class="name"><%= item.name %></div>
+            <div class="price"><%= item.price %></div>
+          </td>
+
+          <% if (i % 3 == 2) { %>
+            </tr>
+          <% } %>
         <% } %>
-    </ul>
+      </table>
+
+      <div class="bottom-line"><img src="images/main_bottom_line.svg" alt="" /></div>
+    </div>
   </body>
 </html>

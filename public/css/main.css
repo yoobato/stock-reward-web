@@ -1,0 +1,55 @@
+header {
+	margin-top: 62px;
+	text-align: center;
+}
+
+header .logo-container {
+	text-align: center;
+	margin: 0 auto;
+}
+
+header .description {
+	color: #343a40;
+	font-size: 14px;
+	margin-top: 9px;
+}
+
+.container {
+	width: 1120px;
+	height: 720px;
+	margin: 22px auto 0px auto;
+	background-color: #fafafa;
+	border: #979797 solid 1px;
+}
+
+.container table {
+	height: calc(100% - 88px);
+	margin: 40px auto;
+	border: 0;
+}
+
+.container table td {
+	padding: 15px;
+}
+
+.item {
+	width: 300px;
+	height: 278px;
+	cursor: hand;
+}
+
+.item .name {
+	color: #343a40;
+	font-size: 20px;
+	text-align: center;
+	margin-top: 9px;
+	margin-right: 8px;
+}
+
+.item .price {
+	color: #343a40;
+	font-size: 14px;
+	text-align: center;
+	margin-top: 7px;
+	margin-right: 8px;
+}
