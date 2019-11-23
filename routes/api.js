@@ -18,7 +18,7 @@ router.get('/api/stock/:code/calculate', (req, res) => {
 });
 
 // 주식 지급
-router.post('/api/store/:storeId/pay-stock', (req, res) => {
+router.get('/api/store/:storeId/pay-stock', (req, res) => {
   const storeId = req.params.storeId;
 
   const userId = req.query.user_id;

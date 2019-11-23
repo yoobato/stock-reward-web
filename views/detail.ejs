@@ -81,7 +81,6 @@
 
         <div class="footer">
           <!-- float: right 라서 순서를 반대로 함 -->
-          <!-- TODO: 주식 주문 API 호출 -->
           <button class="purchase-button">구매하기</button>
           <span class="price"><%= item.price %></span>
           <span class="title">총 결제금액</span>
@@ -91,7 +90,9 @@
       <div class="bottom-line"><img src="images/main_bottom_line.svg" alt="" /></div>
     </div>
 
-    <input id="store" type="hidden" name="store_id" value="<%= store.id %>" />
+    <input id="store_id" type="hidden" name="store_id" value="<%= store.id %>" />
+    <input id="stock_code" type="hidden" value="<%= stock.code %>" />
+    <input id="point" type="hidden" value="<%= item.point %>" />
     <input id="reward" type="hidden" name="is_reward_stock" value="1" />
     <input id="card" type="hidden" name="is_shinhan_card" value="1" />
 
@@ -129,6 +130,34 @@
           $('#card_kb').attr('src', 'images/card_kb_on.svg');
 
           $('#card').val("0");
+        });
+
+        // 상품 주문
+        $('.purchase-button').click(() => {
+          const isStockReward = $('#reward').val();
+          if (isStockReward != 1) {
+            alert('상품을 주문했습니다. 구매해주셔서 감사합니다.');
+            location.href = '/';
+          } else {
+            let point = $("#point").val();
+
+            // 신한카드로 결제하는 경우 1.5배 지급
+            const isShinhanCard = $('#card').val();
+            if (isShinhanCard == 1) {
+              point *= 1.5;
+            }
+
+            const storeId = $('#store_id').val();
+            const stockCode = $("#stock_code").val();
+
+            // 테스트 데이터
+            const userId = "1";
+
+            $.get(`/api/store/${storeId}/pay-stock?user_id=${userId}&stock_code=${stockCode}&won_price=${point}`, (res) => {
+              alert('상품을 주문했습니다. 주식이 지급되면 My 주식리워드 앱으로 알림을 보내드리겠습니다. 구매해주셔서 감사합니다.');
+              location.href = '/';
+            });
+          }
         });
       });
     </script>
