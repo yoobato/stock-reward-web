@@ -6,6 +6,7 @@
   "author": "Daeyeol Ryu <yoobato@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "apidoc": "^0.18.0",
     "nodemon": "^2.0.1"
   },
   "dependencies": {
@@ -18,10 +19,16 @@
     "onesignal-node": "^2.1.1"
   },
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "apidoc": "apidoc -i ./routes -o ./public/apidoc"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yoobato/stock-reward-web.git"
+  },
+  "apidoc": {
+    "title": "주식리워드 API",
+    "description": "고객들에게 주식을 리워드로 지급하고 싶은 온/오프라인 상점 등을 위한 API 연동 규격입니다",
+    "url": "http://localhost/api"
   }
 }

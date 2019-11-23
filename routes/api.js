@@ -4,7 +4,16 @@ const router = express.Router();
 const User = require('../models/User');
 const SHInvestService = require('../services/ShinhanInvest');
 
-// 구매 가능 주식 수 조회 (n원으로 몇 주 구매 가능한지)
+/**
+ * @api {get} /stock/:code/calculate 지급 예상 주식 수 조회
+ * @apiName ConvertKRW2Stock
+ * @apiGroup StockReward
+ *
+ * @apiParam {String} code 종목코드
+ * @apiParam {Number} won_price 금액(KRW)
+ * 
+ * @apiSuccess {Number} expectedAmount 지급 예상 주식 수
+ */
 router.get('/api/stock/:code/calculate', (req, res) => {
   const stockCode = req.params.code;
   const wonPrice = req.query.won_price;
@@ -17,7 +26,18 @@ router.get('/api/stock/:code/calculate', (req, res) => {
   });
 });
 
-// 주식 지급
+/**
+ * @api {get} /store/:storeId/pay-stock 주식리워드 지급
+ * @apiName PayStockReward
+ * @apiGroup StockReward
+ *
+ * @apiParam {Number} storeId 상점 고유번호
+ * @apiParam {Number} user_id 유저(수신자) 고유번호
+ * @apiParam {String} stock_code 종목코드
+ * @apiParam {Number} won_price 금액(KRW)
+ * 
+ * @apiSuccess Success 주식 주문 완료
+ */
 router.get('/api/store/:storeId/pay-stock', (req, res) => {
   const storeId = req.params.storeId;
 
