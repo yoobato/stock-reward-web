@@ -45,6 +45,24 @@ class Stock {
       });
     });
   }
+
+  getStockholders(stock) {
+    return new Promise((resolve, reject) => {
+      console.log(`[주식] 주주 조회 (${stock.name}`);
+
+      return MariaDB.query(`SELECT us.user_id, u.name AS user_name, u.bank_account AS user_bank_account, SUM(amount) AS amount FROM user_stock us
+                             LEFT JOIN user u ON u.id = us.user_id
+                            WHERE us.stock_id = ${stock.id}
+                            GROUP BY us.user_id`).then(({ client, res }) => {
+        MariaDB.close(client);
+        return resolve(res);
+      }).catch((err) => {
+        console.log(`[주식] 주주 조회 오류: ${err}`);
+        MariaDB.close(client);
+        return reject(`오류: ${err}`);
+      });
+    });
+  }
 }
 
 module.exports = new Stock();

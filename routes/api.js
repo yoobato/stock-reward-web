@@ -2,7 +2,10 @@ const express = require('express');
 const router = express.Router();
 
 const User = require('../models/User');
+const Stock = require('../models/Stock');
 const SHInvestService = require('../services/ShinhanInvest');
+const SHBankService = require('../services/ShinhanBank');
+const OneSignal = require('../services/OneSignal');
 
 /**
  * @api {get} /stock/:code/calculate 지급 예상 주식 수 조회
@@ -72,6 +75,28 @@ router.get('/api/user/:userId/stock-reward/history', async (req, res) => {
 
   const stockRewards = await User.getStockRewardHistory(userId, stockId);
   res.status(200).send(stockRewards);
+});
+
+// 주식 배당
+router.get('/api/stock/:code/dividend', async (req, res) => {
+  const stockCode = req.params.code;
+  const dividendPerStock = req.query.dividend_per_stock;
+
+  const stock = await Stock.getStockByCode(stockCode);
+  const stockHolders = await Stock.getStockholders(stock);
+
+  // 배당금 이체
+  for (let stockHolder of stockHolders) {
+    const dividend = stockHolder.amount * dividendPerStock;
+    console.log(`[주식 배당] ${stock.name} / ${stockHolder.user_name} (${dividend}원)`);
+
+    await SHBankService.transferDomestic(`${stock.name} 배당`, `${stock.name} 배당`);
+    // 푸시 메세지 발송
+    const pushResult = await OneSignal.sendDividendReceiveNotification(stock.name, dividend);
+    console.log(`[OneSignal] 푸시 발송됨: ${pushResult.id}`);
+  }
+
+  res.status(200).send('배당금 나누기 성공');
 });
 
 module.exports = router;
