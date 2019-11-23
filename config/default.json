@@ -14,5 +14,12 @@
   "account": {
     "number": "27001234567",
     "password": "71374773999190%2FENC%2FZ6tnuZ292EXO%2B2MoGTbaXQ%3D%3D%0A"
+  },
+  "onesignal": {
+    "userAuthKey": "YWZkMTZiYTUtMzc1NC00YzVhLTkyM2EtODI1YjE2ZDZjYWNk",
+    "app": {
+      "appAuthKey": "YjBjMGNjMGYtMjgxMy00NmVjLWJjYzctNzZkOGM4OWUxZTky",
+      "appId": "71add10e-a796-4d8e-bb57-e07b620751d3"
+    }
   }
 }

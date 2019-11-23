@@ -2,14 +2,17 @@ const express = require('express');
 const router = express.Router();
 
 const User = require('../models/User');
+const Stock = require('../models/Stock');
 const SHInvestService = require('../services/ShinhanInvest');
 const OneSignal = require('../services/OneSignal');
 
 // TODO: 푸시 메세지 테스트
-router.get('/api/stock/noti/insert', (req, res) => {
-  OneSignal.stockInsertNotification("APPLE","1.2").then(response => {
+router.get('/api/notification/test', async (req, res) => {
+  const stock = await Stock.getStockByCode('USAAAPL');
+  
+  OneSignal.sendStockRewardReceiveNotification(stock, 1.45).then(response => {
     res.status(200).send(response);
-  }); 
+  });
 });
 
 // 구매 가능 주식 수 조회 (n원으로 몇 주 구매 가능한지)

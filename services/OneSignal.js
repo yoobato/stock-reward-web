@@ -1,33 +1,26 @@
-const OneSignal = require('onesignal-node');
+const config = require('config');
+const { Client, Notification } = require('onesignal-node');
 
-class OSignal {
+class OneSignal {
     constructor() {
-        this.myClient = new OneSignal.Client({      
-            userAuthKey: 'YWZkMTZiYTUtMzc1NC00YzVhLTkyM2EtODI1YjE2ZDZjYWNk',      
-            app: { 
-                appAuthKey: 'YjBjMGNjMGYtMjgxMy00NmVjLWJjYzctNzZkOGM4OWUxZTky',
-                appId: '71add10e-a796-4d8e-bb57-e07b620751d3' 
-            }      
-        }); 
+        this.client = new Client(config.get('onesignal'));
     }
-    
-    stockInsertNotification(stock, amount){
-        var stockNotification = new OneSignal.Notification({
-            contents: {      
-                en: stock + " 주식이 " + amount + "주 입금되었습니다."
-            }      
-        });  
-        stockNotification.postBody["included_segments"] = ["Active Users"];      
-        //TODO: 메시지 수정 및 icon 추가
-        stockNotification.postBody["headings"] = { "en" : "주식 입금 알림" };
-        return this.myClient.sendNotification(stockNotification)      
-        .then(response => {
+
+    sendStockRewardReceiveNotification(stock, amount) {
+        let notification = new Notification({
+            contents: {
+                en: `📈 ${stock.name} 주식을 ${amount}주 받았습니다!`
+            }
+        });
+        notification.postBody['included_segments'] = ['Active Users'];
+        notification.postBody['headings'] = { 'en': '주식리워드 알림' };
+        
+        return this.client.sendNotification(notification).then(response => {
             return Promise.resolve(response.data);
-        })      
-        .catch(function (err) {      
-            console.log('Something went wrong...', err);      
-        });  
-    }  
+        }).catch(err => {
+            console.log(`[OneSignal] 오류: ${err}`);
+        });
+    }
 }
 
-module.exports = new OSignal();
+module.exports = new OneSignal();
