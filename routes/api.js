@@ -46,7 +46,13 @@ router.get('/api/user/:userId/stock-reward/summary', async (req, res) => {
   res.status(200).send(stockRewards);
 });
 
+// 주식 리워드 히스토리
+router.get('/api/user/:userId/stock-reward/history', async (req, res) => {
+  const userId = req.params.userId;
+  const stockId = req.query.stock_id;
 
-// TODO: 주식 리워드 히스토리
+  const stockRewards = await User.getStockRewardHistory(userId, stockId);
+  res.status(200).send(stockRewards);
+});
 
 module.exports = router;
