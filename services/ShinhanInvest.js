@@ -40,6 +40,10 @@ class SHInvest {
       // 콤마(,) 제거
       price = parseFloat(price.replace(/,/g, ''));
 
+      // TODO: 임의의 현재가 주식마다 다르게 해야함
+      // FIXME: 임의의 현재가
+      price = 50340;
+
       stock.price = price;
       return Promise.resolve(stock);
     });
@@ -65,6 +69,10 @@ class SHInvest {
       let price = response.data.dataBody.historyList[0].trdprc_1;
       // TODO: 환율
       price *= 1200;
+
+      // TODO: 임의의 현재가 주식마다 다르게 해야함
+      // FIXME: 임의의 현재가
+      price = 230134;
 
       stock.price = price;
       return Promise.resolve(stock);
