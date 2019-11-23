@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
       {
         store_id: 2,
         stock_id: 2,
-        thumbnail: "list_item_lf.svg",    // TODO: LF 로고 교체
+        thumbnail: "list_item_lf.svg",
         name: "JILLSTUART 하트 2단 반지갑",
         price: "115,200원",
       },
@@ -43,7 +43,7 @@ router.get('/', (req, res) => {
       {
         store_id: 6,
         stock_id: 6,
-        thumbnail: "list_item_samsung.svg",  // TODO: 신한생명 보험 썸네일
+        thumbnail: "list_item_shinhan.svg",
         name: "(무)신한인터넷암보험",
         price: "월 3,300원 ~",
       },
