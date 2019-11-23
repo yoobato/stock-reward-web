@@ -1,34 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
+const User = require('../models/User');
 const SHInvestService = require('../services/ShinhanInvest');
-
-// router.get('/api/user/:id', (req, res) => {
-//   const userId = req.params.id;
-//   UserService.getUser(userId).then(user => {
-//     res.status(200).send(user);
-//   });
-// });
-
-// router.get('/api/stock/:code', (req, res) => {
-//   const stockCode = req.params.code;
-//   StockService.getStockByCode(stockCode).then(stock => {
-//     res.status(200).send(stock);
-//   }).catch(err => {
-//     console.log(err);
-//     res.status(500).send(err);
-//   });
-// });
-
-// 주식 현재가
-// router.get('/api/stock/:code/current-price', (req, res) => {
-//   const stockCode = req.params.code;
-//   SHInvestService.getStockCurrentPrice(stockCode).then(price => {
-//     res.status(200).send({
-//       price: price
-//     });
-//   });
-// });
 
 // 구매 가능 주식 수 조회 (n원으로 몇 주 구매 가능한지)
 router.get('/api/stock/:code/calculate', (req, res) => {
@@ -57,6 +31,22 @@ router.get('/api/store/:storeId/pay-stock', (req, res) => {
   });
 });
 
-// TODO: 주식 리워드 잔고 조회
+// 주식 리워드 요약
+router.get('/api/user/:userId/stock-reward/summary', async (req, res) => {
+  const userId = req.params.userId;
+
+  const stockRewards = await User.getStockRewardSummary(userId);
+  
+  // 현재가 반영
+  for (let stockReward of stockRewards) {
+    const stock = await SHInvestService.getStockCurrentPrice(stockReward.stock_code);
+    stockReward.current_unit_price = stock.price;
+  }
+
+  res.status(200).send(stockRewards);
+});
+
+
+// TODO: 주식 리워드 히스토리
 
 module.exports = router;
