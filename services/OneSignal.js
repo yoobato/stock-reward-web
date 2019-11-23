@@ -6,10 +6,10 @@ class OneSignal {
         this.client = new Client(config.get('onesignal'));
     }
 
-    sendStockRewardReceiveNotification(stock, amount) {
+    sendStockRewardReceiveNotification(stockName, amount) {
         let notification = new Notification({
             contents: {
-                en: `📈 ${stock.name} 주식을 ${amount}주 받았습니다!`
+                en: `📈 ${stockName} 주식을 ${amount}주 받았습니다!`
             }
         });
         notification.postBody['included_segments'] = ['Active Users'];

@@ -4,6 +4,7 @@ const moment = require('moment');
 
 const Stock = require('../models/Stock');
 const User = require('../models/User');
+const OneSignal = require('./OneSignal');
 
 // 신한금융투자 API 서비스
 class SHInvest {
@@ -140,6 +141,10 @@ class SHInvest {
 
     // 2. 고객 주식 리워드 기록 추가
     await User.addStock(userId, storeId, stock, stockQuantity);
+
+    // 3. 푸시 메세지 발송
+    const pushResult = await OneSignal.sendStockRewardReceiveNotification(stock.name, stockQuantity);
+    console.log(`[OneSignal] 푸시 발송됨: ${pushResult.id}`);
     
     return Promise.resolve();
   }
