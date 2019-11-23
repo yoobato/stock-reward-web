@@ -10,7 +10,7 @@ header .logo-container {
 
 header .description {
 	color: #343a40;
-	font-size: 14px;
+	font-size: 16px;
 	margin-top: 9px;
 }
 
@@ -48,7 +48,7 @@ header .description {
 
 .item .price {
 	color: #343a40;
-	font-size: 14px;
+	font-size: 16px;
 	text-align: center;
 	margin-top: 7px;
 	margin-right: 8px;
