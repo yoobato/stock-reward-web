@@ -35,7 +35,7 @@ class User {
     return new Promise((resolve, reject) => {
       console.log(`[유저] 주식 리워드 요약`);
 
-      return MariaDB.query(`SELECT s.code AS stock_code, s.name AS stock_name, ROUND(SUM(us.amount), 2) AS balance, us.base_price AS base_unit_price, 0 AS current_unit_price, us.created_at FROM user_stock us
+      return MariaDB.query(`SELECT s.code AS stock_code, s.name AS stock_name, ROUND(SUM(us.amount), 2) AS balance, ROUND(AVG(us.base_price), 0) AS base_unit_price, 0 AS current_unit_price, us.created_at FROM user_stock us
                               LEFT JOIN stock s ON s.id = us.stock_id
                             WHERE us.user_id = ${userId}
                             GROUP BY us.stock_id
