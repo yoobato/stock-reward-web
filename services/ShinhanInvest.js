@@ -111,7 +111,8 @@ class SHInvest {
     });
 
     // 지급할 주식 수
-    const stockQuantity = (wonPrice / stock.price).toFixed(2);
+    const stockPrice = stock.price;
+    const stockQuantity = (wonPrice / stockPrice).toFixed(2);
 
     // 우리한테 지급할 주식이 남아있지 않은 경우, 주식을 새로 구매해서 지급한다.
     if (stock.balance < stockQuantity) {
@@ -133,7 +134,7 @@ class SHInvest {
 
         // FIXME: 임의의 체결수량 및 체결단가 데이터
         contractQuantity = buyStockQuantity;
-        stock.price = wonPrice;
+        stock.price = stockPrice;
       } else {
         // 해외
         let orderId = await this._orderForeignStock(stock, buyStockQuantity);
@@ -147,7 +148,7 @@ class SHInvest {
 
         // FIXME: 임의의 체결수량 및 체결단가 데이터
         contractQuantity = buyStockQuantity;
-        stock.price = wonPrice;
+        stock.price = stockPrice;
       }
 
       // 구매한 주식 반영
