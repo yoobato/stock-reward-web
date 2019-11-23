@@ -18,27 +18,28 @@
 
     <div class="container">
       <div class="left-container">
-        <div class="item-name">삼성 QLED 8K 189 cm</div>
+        <div class="item-name"><%= item.name %></div>
         <div class="item-code">상품코드: 2929204920429093</div>
-        <div class="item-price">115,200원</div>
+        <div class="item-price"><%= item.price %></div>
 
-        <div class="item-thumbnail"><img src="images/list_item_hanssem.svg" alt="삼성 QLED 8K 189 cm" /></div>
+        <div class="item-thumbnail"><img src="images/<%= item.thumbnail %>" alt="<%= item.name %>" /></div>
         
         <hr class="option-upper-line" />
 
         <div class="item-option">
           <span class="option-title">옵션.</span>
           <select>
-            <option selected>Red</option>
-            <option>Green</option>
-            <option>Blue</option>
+            <option selected>옵션 선택</option>
+            <% for (var i = 0; i < item.options.length; i++) { %>
+              <option><%= item.options[i] %></option>
+            <% } %>
           </select>
         </div>
 
         <hr class="option-bottom-line" />
 
         <div class="item-description">
-          고급스러운 소가죽 바탕에 로고 레터링과 하트 참장식으로 포인트를 준 2단 반지갑입니다.
+          <%= item.description %>
         </div>
       </div>
 
@@ -49,18 +50,16 @@
           <div class="point-container">
             <img id="bg_point" src="images/bg_reward_off.svg" alt="" />
             <div class="title">포인트 받기</div>
-            <div class="point">864,980포인트</div>
-            <div class="description"><%= storeId %>에서만 이용 가능</div>
+            <div class="point"><%= item.point_str %>포인트</div>
+            <div class="description"><%= store.name %>에서만 이용 가능</div>
           </div>
           <div class="stock-container">
             <img id="bg_stock" src="images/bg_reward_stock_on.svg" alt="" />
             <div class="title">주식 받기</div>
-            <!-- TODO: 예상 주식 다르게 표시 -->
-            <div class="point">14.23주</div>
+            <div class="point"><%= item.stock %>주</div>
             <div class="description">(예상)</div>
             <img class="character" src="images/character.svg" alt="" />
-            <!-- TODO: 받은 주식에 따라서 로고 다르게 표시 -->
-            <img class="stock" src="images/ic_samsung.svg" alt="" />
+            <img class="stock" src="images/<%= item.stock_icon %>" alt="" />
           </div>
           <div class="notice-container">
             <img src="images/bg_notice.svg" alt="" />
@@ -82,8 +81,9 @@
 
         <div class="footer">
           <!-- float: right 라서 순서를 반대로 함 -->
+          <!-- TODO: 주식 주문 API 호출 -->
           <button class="purchase-button">구매하기</button>
-          <span class="price">115,200원</span>
+          <span class="price"><%= item.price %></span>
           <span class="title">총 결제금액</span>
         </div>
       </div>
@@ -91,6 +91,7 @@
       <div class="bottom-line"><img src="images/main_bottom_line.svg" alt="" /></div>
     </div>
 
+    <input id="store" type="hidden" name="store_id" value="<%= store.id %>" />
     <input id="reward" type="hidden" name="is_reward_stock" value="1" />
     <input id="card" type="hidden" name="is_shinhan_card" value="1" />
 

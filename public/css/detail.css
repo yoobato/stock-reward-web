@@ -52,7 +52,8 @@ header .description {
 }
 
 .left-container .item-thumbnail {
-  margin: 40px 20px 80px 20px;
+  margin: 60px 0 80px 0;
+  text-align: center;
 }
 
 .left-container .option-upper-line {

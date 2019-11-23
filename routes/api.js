@@ -28,14 +28,15 @@ router.get('/api/stock/:code/calculate', (req, res) => {
   });
 });
 
-// TODO: POST
 // 주식 지급
-router.get('/api/store/:storeId/pay-stock', (req, res) => {
+router.post('/api/store/:storeId/pay-stock', (req, res) => {
   const storeId = req.params.storeId;
 
   const userId = req.query.user_id;
   const stockCode = req.query.stock_code;
   const wonPrice = req.query.won_price;
+
+  // TODO: 주식 지급했을 때, 푸시 메시지 발송
 
   SHInvestService.payStock(storeId, userId, stockCode, wonPrice).then(() => {
     res.status(200).send('Success');
