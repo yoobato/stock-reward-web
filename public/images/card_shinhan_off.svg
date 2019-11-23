@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="185px" height="153px" viewBox="0 0 185 153" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>Group 13</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="185" height="119"></rect>
+        <linearGradient x1="0%" y1="42.3632812%" x2="80.365767%" y2="42.3632812%" id="linearGradient-3">
+            <stop stop-color="#D5DDE7" offset="0%"></stop>
+            <stop stop-color="#94B3D9" offset="18.8370988%"></stop>
+            <stop stop-color="#6D9AD1" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="95.3805906%" x2="50%" y2="35.1660544%" id="linearGradient-4">
+            <stop stop-color="#50585D" stop-opacity="0.319684222" offset="0%"></stop>
+            <stop stop-color="#6C7274" stop-opacity="0.217111014" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-8.9%" y="-18.1%" width="117.9%" height="136.1%" filterUnits="objectBoundingBox" id="filter-5">
+            <feGaussianBlur stdDeviation="5" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <path d="M102.662109,2 C107.632672,2 111.662109,6.02943725 111.662109,11 C111.662109,15.9705627 107.632672,20 102.662109,20 L99.888,20 L95.425423,26.4852814 L90.961,20 L9,20 C4.02943725,20 6.08718376e-16,15.9705627 0,11 C-6.08718376e-16,6.02943725 4.02943725,2 9,2 L102.662109,2 Z" id="path-6"></path>
+        <filter x="-4.9%" y="-14.3%" width="109.9%" height="144.9%" filterUnits="objectBoundingBox" id="filter-7">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD-Copy" transform="translate(-659.000000, -607.000000)">
+            <g id="Group-13" transform="translate(659.000000, 606.000000)">
+                <g id="Group-12">
+                    <g id="Group-10">
+                        <g id="Group-9">
+                            <g id="Group-4">
+                                <g id="card" transform="translate(0.000000, 35.000000)">
+                                    <mask id="mask-2" fill="white">
+                                        <use xlink:href="#path-1"></use>
+                                    </mask>
+                                    <g id="Rectangle"></g>
+                                    <rect id="Rectangle" fill="url(#linearGradient-3)" mask="url(#mask-2)" x="0" y="0.5" width="185" height="118" rx="8"></rect>
+                                    <path d="M7.5,70.6562475 L29.8868248,93 L174.5,93 L174.5,18.5 C174.5,14.3578644 171.142136,11 167,11 L15,11 C10.8578644,11 7.5,14.3578644 7.5,18.5 L7.5,70.6562475 Z" id="Combined-Shape" stroke="#979797" fill="url(#linearGradient-4)" filter="url(#filter-5)" mask="url(#mask-2)"></path>
+                                    <path d="M0,9 C-5.41083001e-16,4.581722 3.581722,1 8,1 L177,1 C181.418278,1 185,4.581722 185,9 L185,93 L25.2272727,93 L0,67.6788991 L0,9 Z" id="Combined-Shape" fill="#1384C8" mask="url(#mask-2)"></path>
+                                    <image id="제목-없음-1" mask="url(#mask-2)" x="-17.6666667" y="-87.5" width="141.333333" height="212" xlink:href="data:image/png;base64,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njYMzDPD6Ub+rST7yPPMA5V5bspLkI4+5i7TvugN2fHeoMqsQh2LVtju29XlOt5iNWhurY5WfqnyxsqbKjvGh9Ru2+hKlXuG+qlWxxMs2+QEXRWj7bjv3ubKqtw5fciP+97KnCSbxXhSjPtYtt1mJ04sclJ03FeVX1fOLwjd3+Wii1D3pVz0ncf+tajP/+jrcNCBz3HP/4C/GA5+vOIOzbuq+qrhaPJj66tz3gb9dOg7nWpef3fkDdaiiGOcxrHZd54lEunvYzrZ8CT/kzdhHf28ls+nclL3dk95uVYHO2n9psqsHgcrL6u8qvLqyqwkHblF2O0xrgQH6mBzJU++eTjw072A/WyY4wdVj1EyXm+szInRK0texXa8qypZGbPfl3VjlbkFO5V48TDoi1W/fMrbh/YrhrrqVgrUU974IN0PffPyW9XQD4afHTqzbbe/fGi/emof5/7aMPb4NDavlXv7lB+e2lP0g3Ne4XbkYbvH54G1o+fOw/BmkRcSmeP6YeClU1vax2POd+39pcx+Nos+7n51vmx8jjVzjg/pB6e2cZ951btZ5NZybWLdVpDcVuX54vAS4W9W+xuGvnuG+ni7MF41849uibH/7seaTv736FTPg/QYR4YPfTXuudL10NA/XrF77jwQ50H/kWFcV/MKNatJH1PGdoy3K92fvl/2gKl8U5WHZm39MfPHsefKinGkch6ZP6tH73+8rT0yH1yfs3Ltr8z3nUfmuriyv/+8f1d+zn3m2kRdmsZjXXTs/zVgGtzj5n2L2he1ZZq0z7fv9pRj37I5evw4Nm2J3G71jz0XrT7h0texbN5l7fPtxs+9r27rMvvu43uyx9FzdDnOlWN8fJ/r9L+795dREiBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgT+PwX+A64svGQmn4R4AAAAAElFTkSuQmCC"></image>
+                                    <text id="7942-****-****-*942" mask="url(#mask-2)" font-family="AppleSDGothicNeo-Medium, Apple SD Gothic Neo" font-size="16" font-weight="400" letter-spacing="-0.24" fill="#FFFFFF">
+                                        <tspan x="17" y="57">7942   ****   ****   *942</tspan>
+                                    </text>
+                                </g>
+                                <g id="card-tooltip" transform="translate(21.000000, 0.000000)">
+                                    <g id="Combined-Shape">
+                                        <use fill="black" fill-opacity="1" filter="url(#filter-7)" xlink:href="#path-6"></use>
+                                        <use fill="#343A40" fill-rule="evenodd" xlink:href="#path-6"></use>
+                                    </g>
+                                    <text id="주식-1.5x-적립" font-family="AppleSDGothicNeo-Medium, Apple SD Gothic Neo" font-size="12" font-weight="400" letter-spacing="-0.18">
+                                        <tspan x="24" y="15" fill="#FFFFFF">주식 </tspan>
+                                        <tspan x="47.376" y="15" font-family="AppleSDGothicNeo-Bold, Apple SD Gothic Neo" font-weight="bold" fill="#F7B500">1.5x</tspan>
+                                        <tspan x="66.6" y="15" fill="#FFFFFF"> 적립</tspan>
+                                    </text>
+                                    <text id="+" font-family="AppleSDGothicNeo-Heavy, Apple SD Gothic Neo" font-size="20" font-weight="600" fill="#F7B500">
+                                        <tspan x="8" y="18">+</tspan>
+                                    </text>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+                <rect id="Rectangle" fill="#000000" opacity="0.600000024" x="0" y="35" width="185" height="118" rx="8"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

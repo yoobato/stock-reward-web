@@ -39,8 +39,51 @@
           고급스러운 소가죽 바탕에 로고 레터링과 하트 참장식으로 포인트를 준 2단 반지갑입니다.
         </div>
       </div>
+
       <div class="right-container">
-        <!-- TODO: -->
+        <div class="sub-title">구매 혜택</div>
+
+        <div class="reward-container">
+          <div class="point-container">
+            <img src="images/bg_reward_off.svg" alt="" />
+            <div class="title">포인트 받기</div>
+            <div class="point">864,980포인트</div>
+            <div class="description"><%= storeId %>에서만 이용 가능</div>
+          </div>
+          <div class="stock-container">
+            <img src="images/bg_reward_stock_on.svg" alt="" />
+            <div class="title">주식 받기</div>
+            <!-- TODO: 예상 주식 다르게 표시 -->
+            <div class="point">14.23주</div>
+            <div class="description">(예상)</div>
+            <img class="character" src="images/character.svg" alt="" />
+            <!-- TODO: 받은 주식에 따라서 로고 다르게 표시 -->
+            <img class="stock" src="images/ic_samsung.svg" alt="" />
+          </div>
+          <div class="notice-container">
+            <img src="images/bg_notice.svg" alt="" />
+            <div class="title">안내사항</div>
+            <div class="description">* 주식을 받는 경우 실제 지급받으실 주식은 지급 예상 주식과 다를 수 있습니다.<br /><br />* 주식은 3영업일 내로 지급되며, 주식리워드 앱을 통해서 확인하실 수 있습니다.</div>
+          </div>
+        </div>
+
+        <div class="sub-title card-sub-title">결제 수단</div>
+
+        <div class="card-container">
+          <div class="shinhan-container">
+            <img id="card_shinhan" src="images/card_shinhan_on.svg" alt="신한카드" />
+          </div>
+          <div class="kb-container">
+            <img id="card_kb" src="images/card_kb_off.svg" alt="국민카드" />
+          </div>
+        </div>
+
+        <div class="footer">
+          <!-- float: right 라서 순서를 반대로 함 -->
+          <button class="purchase-button">구매하기</button>
+          <span class="price">115,200원</span>
+          <span class="title">총 결제금액</span>
+        </div>
       </div>
 
       <div class="bottom-line"><img src="images/main_bottom_line.svg" alt="" /></div>

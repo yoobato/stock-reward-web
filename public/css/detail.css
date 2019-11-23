@@ -95,6 +95,187 @@ header .description {
   float: right;
 }
 
+.right-container .sub-title {
+  margin-top: 25px;
+  margin-left: 90px;
+  font-size: 16px;
+  color: #343a40;
+  font-weight: bold;
+  clear: both;
+}
+
+.right-container .reward-container {
+  width: 600px;
+  margin: 10px auto 0 auto;
+}
+
+.right-container .reward-container .point-container {
+  float: left;
+  width: 200px;
+  color: #6d7278;
+}
+
+.right-container .reward-container .point-container img {
+  position: relative;
+  z-index: 0;
+}
+
+.right-container .reward-container .point-container .title {
+  position: relative;
+  z-index: 1;
+  top: -269px;
+  left: 21px;
+  font-size: 16px;
+}
+.right-container .reward-container .point-container .point {
+  position: relative;
+  z-index: 1;
+  top: -256px;
+  left: 21px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.right-container .reward-container .point-container .description {
+  position: relative;
+  z-index: 1;
+  top: -236px;
+  left: 21px;
+  font-size: 12px;
+}
+
+.right-container .reward-container .stock-container {
+  float: left;
+  width: 200px;
+  color: #009ee8;
+}
+
+.right-container .reward-container .stock-container img {
+  position: relative;
+  z-index: 0;
+}
+
+.right-container .reward-container .stock-container .title {
+  position: relative;
+  z-index: 1;
+  top: -269px;
+  left: 21px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.right-container .reward-container .stock-container .point {
+  position: relative;
+  z-index: 1;
+  top: -265px;
+  left: 21px;
+  font-size: 30px;
+  font-weight: bold;
+}
+.right-container .reward-container .stock-container .description {
+  position: relative;
+  z-index: 1;
+  top: -253px;
+  left: 21px;
+  font-size: 12px;
+}
+.right-container .reward-container .stock-container .character {
+  position: relative;
+  z-index: 1;
+  top: -190px;
+  left: 53px;
+}
+.right-container .reward-container .stock-container .stock {
+  position: relative;
+  z-index: 1;
+  top: -313px;
+  left: -8px;
+}
+
+.right-container .reward-container .notice-container {
+  float: left;
+  width: 200px;
+  color: #343A40;
+}
+
+.right-container .reward-container .notice-container img {
+  position: relative;
+  z-index: 0;
+}
+
+.right-container .reward-container .notice-container .title {
+  position: relative;
+  z-index: 1;
+  top: -269px;
+  left: 21px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.right-container .reward-container .notice-container .description {
+  position: relative;
+  z-index: 1;
+  top: -255px;
+  left: 26px;
+  font-size: 14px;
+  width: 154px;
+  line-height: 1.5em;
+}
+
+.card-sub-title {
+  position: relative;
+  top: -165px;
+}
+
+.right-container .card-container {
+  position: relative;
+  top: -150px;
+  height: 200px;
+  width: 450px;
+  margin: 0 auto;
+}
+
+.right-container .card-container .shinhan-container {
+  float: left;
+}
+.right-container .card-container .kb-container {
+  float: left;
+  margin-left: 70px;
+}
+
+.right-container .footer {
+  background-color: #505050;
+  height: 56px;
+  line-height: 56px;
+  position: relative;
+  top: -135px;
+  clear: both;
+}
+
+.right-container .footer .title {
+  float: right;
+  color: white;
+  font-size: 16px;
+}
+
+.right-container .footer .price {
+  float: right;
+  color: #4fc6fd;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0 20px;
+}
+
+.right-container .footer .purchase-button {
+  float: right;
+  width: 240px;
+  height: 40px;
+  color: white;
+  background: #009ee8;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  margin-top: 8px;
+  margin-right: 20px;
+}
+
 .bottom-line {
   clear: both;
 }
