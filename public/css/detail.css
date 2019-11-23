@@ -113,6 +113,7 @@ header .description {
   float: left;
   width: 200px;
   color: #6d7278;
+  cursor: hand;
 }
 
 .right-container .reward-container .point-container img {
@@ -147,6 +148,7 @@ header .description {
   float: left;
   width: 200px;
   color: #009ee8;
+  cursor: hand;
 }
 
 .right-container .reward-container .stock-container img {
@@ -234,10 +236,12 @@ header .description {
 
 .right-container .card-container .shinhan-container {
   float: left;
+  cursor: hand;
 }
 .right-container .card-container .kb-container {
   float: left;
   margin-left: 70px;
+  cursor: hand;
 }
 
 .right-container .footer {
@@ -274,6 +278,7 @@ header .description {
   font-size: 16px;
   margin-top: 8px;
   margin-right: 20px;
+  cursor: hand;
 }
 
 .bottom-line {
